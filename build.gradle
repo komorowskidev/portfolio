@@ -34,3 +34,5 @@ dependencies {
 
 mainClassName = 'com.herokuapp.komorowskidev.portfolio.PortfolioApplication'
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
