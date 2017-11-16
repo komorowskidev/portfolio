@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>header</title>
+</head>
+<body>
+	<div th:fragment="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      		<div class="container">
+        		<div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          link do sen o szambali
+          		  
+        		</div>
+        		<div class="collapse navbar-collapse" id="navbar">
+      				<ul class="nav navbar-nav">
+        				<li><a href="psychotherapy">Psychoterapia <span class="sr-only">(current)</span></a></li>
+        				<li><a href="programming">Programowanie</a></li>
+        				<li><a href="beekeeping">Pasieka</a></li>
+        			</ul>
+      			</div>
+      		</div>
+    	</nav>
+	</div>
+</body>
+</html>
