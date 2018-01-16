@@ -3,6 +3,12 @@ package com.herokuapp.komorowskidev.portfolio;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * moja strona do prezentowania kodu
+ * 
+ * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
+ *
+ */
 @SpringBootApplication
 public class PortfolioApplication {
 

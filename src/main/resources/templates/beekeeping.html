@@ -14,8 +14,8 @@
 	<div th:replace="fragments/header :: header">Header</div>
 	<div class="jumbotron">
 		<div class="container">
-			<h2>PASIEKA KOMOROWSKICH</h2>
-			<p>miody z akacji i lipy</p>
+			<h2 th:text="${section2.title}">Tytuł sekcji</h2>
+			<p th:text="${section2.person}">opis</p>
 		</div>
     </div>
     <div class="container">

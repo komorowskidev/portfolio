@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>header</title>
+</head>
+<body>
+	<div th:fragment="eventlist">
+		<div class="eventlist" th:unless="${#lists.isEmpty(events)}">
+				<table class="table table-striped">
+					<tr>
+						<th>Data</th>
+						<th>Zdarzenie</th>
+						<th  th:if="${editable}">Akcje</th>
+					</tr>
+					<tr th:each="event : ${events}" scope="row">
+						<td th:text="${event.date}">date</td>
+						<td th:text="${event.description}">description</td>
+						<td th:if="${editable}">
+							<a th:href="@{/showFormForUpdate(id=${event.id})}">Aktualizuj</a>
+							|
+							<a th:href="@{/delete(id=${event.id})}" onclick="if (!(confirm('Na pewno skasować?'))) return false">Skasuj</a>
+						</td>
+					</tr>
+				</table>
+		</div>
+	</div>
+</body>
+</html>
