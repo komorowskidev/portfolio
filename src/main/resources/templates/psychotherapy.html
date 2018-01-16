@@ -14,8 +14,8 @@
 	<div th:replace="fragments/header :: header">Header</div>
 	<div class="jumbotron">
 		<div class="container">
-			<h2>GABINET PSYCHOTERAPII<br />ZIELONA GÓRA</h2>
-			<p>mgr Anna Komorowska</p>
+			<h2 th:text="${section0.title}">Tytuł sekcji</h2>
+			<p th:text="${section0.person}">osoba</p>
 		</div>
     </div>
     <div class="container">

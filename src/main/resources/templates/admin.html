@@ -2,18 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>Programowanie - Krzysztof Świerkosz-Komorowski</title>
-<meta name="description" content="Java developer programista" />
-<meta name="keywords" content="java spring slf4j junit git eclipse" />
+<title>ADMIN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
 </head>
 <body>
-	<div th:replace="fragments/header :: header">Header</div>
+	<!-- <div th:replace="fragments/header :: header">Header</div>  -->
 	<div class="jumbotron">
 		<div class="container">
+		<!-- 
 			<h2 th:text="${section1.title}">Tytuł sekcji</h2>
 			<p th:text="${section1.description}">opis</p>
 			<p th:text="${section1.person}">osoba</p>
@@ -21,20 +20,20 @@
 			<a href="http://pl.linkedin.com/in/komorowskidev" target="_blank">LinkedIn: pl.linkedin.com/in/komorowskidev</a><br />
 			<a href="http://www.goldenline.pl/krzysztof-swierkosz-komorowski" target="_blank">GoldenLine: goldenline.pl/krzysztof-swierkosz-komorowski</a><br />
 			</p>
+		 -->
 		</div>
     </div>
+    <!-- 
     <div class="container">
-	    <p>
-		Tworzę aplikacje w języku Java używając frameworka Spring. Używam Hibernate, wykorzystuję AOP, do logowania korzystam z Logback, do testów jednostkowych używam JUnit.<br />
-		Obecnie korzystam z bazy PostgreSQL, ale używałem także MySQL i SQLite. Pisałem także w PHP, Android oraz HTML/CSS i JavaScript.<br />  
-		Używam środowiska Eclipse, korzystałęm także z Android Studio gdy pisałem na Androida.
-		Ta strona napisana jest z wykorzystaniem frameworków SpringBoot i Bootstrap.
-		Mój kod można obejrzeć na 
-		<a href="https://github.com/komorowskidev" target="_blank">GitHub</a><br />
-		W wolnym czasie ćwiczę kodowanie rozwiązując problemy programistyczne na <a href="http://www.codeabbey.com" target="_blank">CodeAbbey</a><br />
-		Poniżej zamieszczam istotne, dla mojej kariery, wydarzenia:</p>
-		<div th:replace="fragments/eventlist :: eventlist">Event list</div> 
+		 <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-warning">Wyloguj</button>
+        </form>
 	</div>
-	<div th:replace="fragments/footer :: footer">Footer</div>
+	 -->
+	<div class="addbutton">
+		<button type="button" class="btn btn-warning" onclick="window.location.href='logout'; return false;">Wyloguj</button>
+		<button type="button" class="btn btn-success" onclick="window.location.href='showFormForAdd'; return false;">Dodaj zdarzenie</button>
+	</div>
+	<div th:replace="fragments/eventlist :: eventlist">Event list</div>
 </body>
 </html>

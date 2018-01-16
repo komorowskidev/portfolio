@@ -20,9 +20,9 @@
         		</div>
         		<div class="collapse navbar-collapse" id="navbar">
       				<ul class="nav navbar-nav">
-        				<li><a href="psychoterapia">Psychoterapia <span class="sr-only">(current)</span></a></li>
-        				<li><a href="programowanie">Programowanie</a></li>
-        				<li><a href="pasieka">Pasieka</a></li>
+        				<li><a th:href="${header.url[0]}" th:text="${header.title[0]}">Tytuł<span class="sr-only">(current)</span></a></li>
+        				<li><a th:href="${header.url[1]}" th:text="${header.title[1]}">Tytuł</a></li>
+        				<li><a th:href="${header.url[2]}" th:text="${header.title[2]}">Tytuł</a></li>
         			</ul>
       			</div>
       		</div>
