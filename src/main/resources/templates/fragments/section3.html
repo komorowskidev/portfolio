@@ -2,20 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>Pasieka Komorowskich</title>
-<meta name="description" content="Nasze pszczelarzenie" />
-<meta name="keywords" content="Komorowscy, pszczoły, pszczelarstwo, pasieka, miód" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+<title>section0</title>
 </head>
 <body>
-	<div th:replace="fragments/header :: header">Header</div>
+	<div th:fragment="section3">
 	<div class="jumbotron">
 		<div class="container">
-			<h2 th:text="${section2.title}">Tytuł sekcji</h2>
-			<p th:text="${section2.person}">opis</p>
+			<h1 th:text="${section.title}">nagłówek</h1>
+			<p th:text="${nav.person3}">opis</p>
 		</div>
     </div>
     <div class="container">
@@ -37,6 +31,6 @@
 		</p>
 		<p>Miód z 2017r. już nam się skończył. Zapraszamy do kontaktu w czerwcu 2018r.</p>
 	</div>
-	<div th:replace="fragments/footer :: footer">Footer</div>
+	</div>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>section0</title>
+</head>
+<body>
+	<div th:fragment="section0">
+	<div class="jumbotron">
+		<div class="container">
+			<h1 th:text="${section.title}">nagłówek</h1>
+			<p th:text="${nav.person0}">opis</p>
+		</div>
+    </div>
+    <div class="container">
+	    <div class="row">
+	        <div class="col-md-4">
+	          <h2 th:text="${nav.name1}">Tytuł sekcji</h2>
+	          <p th:text="${nav.description1}">opis</p>
+	          <p th:text="${nav.person1}">osoba</p>
+	          <p><a class="btn btn-default" th:href="${nav.url1}" role="button">Szczegóły &raquo;</a></p>
+	        </div>
+	        <div class="col-md-4">
+	          <h2 th:text="${nav.name2}">Tytuł sekcji</h2>
+	          <p th:text="${nav.description2}">opis</p>
+	          <p th:text="${nav.person2}">osoba</p>
+	          <p><a class="btn btn-default" th:href="${nav.url2}" role="button">Szczegóły &raquo;</a></p>
+	       </div>
+	        <div class="col-md-4">
+	          <h2 th:text="${nav.name3}">Tytuł sekcji</h2>
+	          <p th:text="${nav.description3}">opis</p>
+	          <p th:text="${nav.person3}">osoba</p>
+	          <p><a class="btn btn-default" th:href="${nav.url3}" role="button">Szczegóły &raquo;</a></p>
+	        </div>
+	    </div>
+	</div>
+	</div>
+</body>
+</html>
