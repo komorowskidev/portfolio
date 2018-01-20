@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>section0</title>
+</head>
+<body>
+	<div th:fragment="section2">
+	<div class="jumbotron">
+		<div class="container">
+			<h1 th:text="${section.title}">nagłówek</h1>
+			<p th:text="${nav.person2}">opis</p>
+		</div>
+    </div>
+     <div class="container">
+	    <p>
+		Tworzę aplikacje w języku Java używając frameworka Spring. Używam Hibernate, wykorzystuję AOP, do logowania korzystam z Logback, do testów jednostkowych używam JUnit.<br />
+		Obecnie korzystam z bazy PostgreSQL, ale używałem także MySQL i SQLite. Pisałem także w PHP, Android oraz HTML/CSS i JavaScript.<br />  
+		Używam środowiska Eclipse, korzystałem także z Android Studio gdy pisałem na Androida.
+		Ta strona napisana jest z wykorzystaniem frameworków SpringBoot i Bootstrap.
+		Mój kod można obejrzeć na 
+		<a href="https://github.com/komorowskidev" target="_blank">GitHub</a><br />
+		W wolnym czasie ćwiczę kodowanie rozwiązując problemy programistyczne na <a href="http://www.codeabbey.com" target="_blank">CodeAbbey</a><br />
+		Poniżej zamieszczam istotne, dla mojej kariery, wydarzenia:</p>
+		<div th:replace="fragments/eventlist :: eventlist">Event list</div> 
+	</div>
+	</div>
+</body>
+</html>

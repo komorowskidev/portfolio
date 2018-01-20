@@ -6,13 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.herokuapp.komorowskidev.portfolio.bean.BeekeepingBean;
-import com.herokuapp.komorowskidev.portfolio.bean.Header;
-import com.herokuapp.komorowskidev.portfolio.bean.ProgrammingBean;
-import com.herokuapp.komorowskidev.portfolio.bean.PsychotherapyBean;
+import com.herokuapp.komorowskidev.portfolio.bean.MetaBean;
+import com.herokuapp.komorowskidev.portfolio.bean.NavBean;
+import com.herokuapp.komorowskidev.portfolio.bean.Section0;
+import com.herokuapp.komorowskidev.portfolio.bean.Section1;
+import com.herokuapp.komorowskidev.portfolio.bean.Section2;
+import com.herokuapp.komorowskidev.portfolio.bean.Section3;
 import com.herokuapp.komorowskidev.portfolio.entity.Events;
 import com.herokuapp.komorowskidev.portfolio.service.EventsService;
 
@@ -25,53 +26,89 @@ import com.herokuapp.komorowskidev.portfolio.service.EventsService;
 public class MainController {
 	
 	@Autowired
-	private PsychotherapyBean section0;
-	private final String SECTION0URL = "/psychoterapia";
+	private Section0 section0;
 	
 	@Autowired
-	private ProgrammingBean section1;
-	private final String SECTION1URL = "/programowanie";
+	private Section1 section1;
 	
 	@Autowired
-	private BeekeepingBean section2;
-	private final String SECTION2URL = "/pasieka";
+	private Section2 section2;
+	
+	@Autowired
+	private Section3 section3;
+	
+	@Autowired
+	private NavBean nav;
+	
+	private final String SECTION1URL = "/psychoterapia";
+	private final String SECTION2URL = "/programowanie";
+	private final String SECTION3URL = "/pszczelarstwo";
 	
 	@Autowired
 	private EventsService eventsService;
+
+	@GetMapping("/")
+    public String temp(Model model) {
+    	MetaBean meta = new MetaBean(
+    			section0.getMetaTitle(), 
+    			section0.getMetaDescription(), 
+    			section0.getMetaKeywords());
+    	String fragment = "fragments/section0";
+    	model.addAttribute("meta", meta);
+    	model.addAttribute("nav", nav);
+    	model.addAttribute("fragment", fragment);
+    	model.addAttribute("section", section0);
+    	return "layout";
+    }
 	
-    @RequestMapping("/")
-    public String index(Model model) {
-    	model.addAttribute("header", getHeader());
-    	model.addAttribute("section0", section0);
-    	model.addAttribute("section1", section1);
-    	model.addAttribute("section2", section2);
-        return "index";
-    }
-    
-	@GetMapping(SECTION0URL)
-    public String section0(Model model) {
-		setAttr(model, "section0", section0);
-    	return section0.getHtml();
-    }
-    
-    @GetMapping(SECTION1URL)
+	@GetMapping(SECTION1URL)
     public String section1(Model model) {
-    	setAttr(model, "section1", section1);
+		MetaBean meta = new MetaBean(
+    			section1.getMetaTitle(), 
+    			section1.getMetaDescription(), 
+    			section1.getMetaKeywords());
+    	String fragment = "fragments/section1";
+    	model.addAttribute("meta", meta);
+    	model.addAttribute("nav", nav);
+    	model.addAttribute("fragment", fragment);
+    	model.addAttribute("section", section1);
+    	return "layout";
+    }
+	
+	@GetMapping(SECTION2URL)
+    public String section2(Model model) {
+		MetaBean meta = new MetaBean(
+    			section2.getMetaTitle(), 
+    			section2.getMetaDescription(), 
+    			section2.getMetaKeywords());
+    	String fragment = "fragments/section2";
     	Iterable<Events> events = eventsService.getEvents();
     	model.addAttribute("events", events);
-    	return section1.getHtml();
+    	model.addAttribute("meta", meta);
+    	model.addAttribute("nav", nav);
+    	model.addAttribute("fragment", fragment);
+    	model.addAttribute("section", section2);
+    	return "layout";
     }
-    
-    @GetMapping(SECTION2URL)
-    public String section2(Model model) {
-    	setAttr(model, "section2", section2);
-    	return section2.getHtml();
+	
+	@GetMapping(SECTION3URL)
+    public String section3(Model model) {
+		MetaBean meta = new MetaBean(
+    			section3.getMetaTitle(), 
+    			section3.getMetaDescription(), 
+    			section3.getMetaKeywords());
+    	String fragment = "fragments/section3";
+    	model.addAttribute("meta", meta);
+    	model.addAttribute("nav", nav);
+    	model.addAttribute("fragment", fragment);
+    	model.addAttribute("section", section3);
+    	return "layout";
     }
     
     @GetMapping("/admin")
     public String sectionAdmin(Model model) {
     	Iterable<Events> events = eventsService.getEvents();
-    	setAttr(model, "events", events);
+    	model.addAttribute("events", events);
     	model.addAttribute("editable", true);
     	return "admin";
     }
@@ -112,19 +149,5 @@ public class MainController {
 		eventsService.saveEvent(event);
 		return "redirect:/admin";
 	}
-    
-    private void setAttr(Model model, String sectionNumber, Object section) {
-    	model.addAttribute("header", getHeader());
-    	model.addAttribute(sectionNumber, section);
-    }
-    
-    private Header getHeader() {
-    	Header header = new Header(3);
-    	String[] title = {section0.getTitle(), section1.getTitle(), section2.getTitle()};
-    	String[] url = {SECTION0URL, SECTION1URL, SECTION2URL};
-    	header.setTitle(title);
-    	header.setUrl(url);
-    	return header;
-	}
-
+	
 }
