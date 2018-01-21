@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Section0 {
 	
-protected final String SECTION = "section0";
+	protected final String SECTION = "section0";
 	
 	@Value("${" + SECTION + ".metaTitle}")
 	private String metaTitle = "";
