@@ -2,6 +2,7 @@ package com.herokuapp.komorowskidev.portfolio.bean;
 
 /**
  * objekt do budowy nagłówka strony
+ * przechowuje tekst dla pól meta w nagłówku strony html
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *
  */

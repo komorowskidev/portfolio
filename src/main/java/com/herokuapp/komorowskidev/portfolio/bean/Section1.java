@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * klasa przechowuje dane z podstrony
+ * klasa przechowuje dane z podstrony 1
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *
  */
