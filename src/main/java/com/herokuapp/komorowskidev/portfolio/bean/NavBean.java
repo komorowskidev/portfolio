@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * object do budowania navbar
+ * objekt do budowania navbar
+ * przechowuje dane potrzebne na każdej podstronie
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *
  */

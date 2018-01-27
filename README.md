@@ -1,11 +1,14 @@
 # portfolio
-Aplikacja, której kodem chcę się pochwalić. 
+Aplikacja, na której eksperymentuję z nowo poznanymi technologiami. 
 
 To aplikacja, na której eksperymentuję z programowaniem w Javie. Pomysły, które się sprawdzą wykorzystuję potem w pracy. Uruchomiona jest na: https://komorowskidev.herokuapp.com/
  (drobna uwaga: Heroku usypia aplikacje więc pierwsze wejście na stronę może trwać kilkanaście sekund).
  
 Zapraszam do współpracy. Znajdziesz mnie na LinkedIn oraz GoldenLine jako KomorowskiDev.
 Lubię pracę w firmie, w której jestem obecnie zatrudniony, ale chętnie popiszę coś dodatkowo bo programowanie to moja pasja, a każdy nowy projekt mnie rozwija.
+
+## v1.2
+* dołączona usługa REST - pod adresem /greeting (może być wywołana z parametrem "name") 
 
 ## v1.1
 * przebudowa strony - jest jeden layout do którego wgrywa się różne treści

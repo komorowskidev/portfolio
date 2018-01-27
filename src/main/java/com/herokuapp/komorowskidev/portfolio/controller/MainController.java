@@ -48,7 +48,7 @@ public class MainController {
 	private EventsService eventsService;
 
 	@GetMapping("/")
-    public String temp(Model model) {
+    public String index(Model model) {
     	MetaBean meta = new MetaBean(
     			section0.getMetaTitle(), 
     			section0.getMetaDescription(), 
