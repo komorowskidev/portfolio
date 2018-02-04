@@ -34,7 +34,6 @@ public class Events {
 	private String description;
 	
 	public Events() {
-		
 	}
 
 	public Events(LocalDate date, String description) {

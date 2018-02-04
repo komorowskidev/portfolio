@@ -6,7 +6,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * konfiguracja aplikacji
+ * wczytanie konfiguracji aplikacji
  * 
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *

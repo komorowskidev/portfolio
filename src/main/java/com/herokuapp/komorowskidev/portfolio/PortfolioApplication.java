@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * moja strona do prezentowania kodu
+ * moja strona do eksperymentowania z nowymi technologiami
  * 
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *

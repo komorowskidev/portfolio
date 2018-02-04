@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.herokuapp.komorowskidev.portfolio.bean.RestGreeting;
 
+/**
+ * kontroler REST
+ * 
+ * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
+ *
+ */
 @RestController
 public class RestGreetingController {
 	

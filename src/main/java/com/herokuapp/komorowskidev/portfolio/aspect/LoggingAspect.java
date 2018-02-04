@@ -41,4 +41,29 @@ public class LoggingAspect {
 	public void beforeSectionAdmin() {
 		logger.debug("==> entering section admin");
 	}
+	
+	@Before("execution(* login(..))")
+	public void beforeLogin() {
+		logger.debug("==> entering user login form");
+	}
+	
+	@Before("execution(* showFormForAdd(..))")
+	public void beforeAddForm() {
+		logger.debug("==> entering add event form");
+	}
+	
+	@Before("execution(* showFormForUpdate(..))")
+	public void beforeUpdateForm() {
+		logger.debug("==> entering update event form");
+	}
+	
+	@Before("execution(* deleteEvent(..))")
+	public void beforeDeleteEvent() {
+		logger.debug("==> deleting event");
+	}
+	
+	@Before("execution(* saveEvent(..))")
+	public void beforeSaveEvent() {
+		logger.debug("==> saving event");
+	}
 }
