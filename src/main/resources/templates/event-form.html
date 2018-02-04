@@ -9,19 +9,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
 </head>
 <body>
-	<!-- <div th:replace="fragments/header :: header">Header</div>  -->
 	<div class="jumbotron">
 		<div class="container">
 			<!--  <h2>Edycja wydarzenia</h2>   -->
 		</div>
     </div>
-    <!-- 
-    <div class="container">
-		 <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Wyloguj"/>
-        </form>
-	</div>
-	 -->
 	<div class="addEvent">
 		<form action="#" th:action="@{saveEvent}" th:object="${event}" method="post">
 			<input type="hidden" th:value="*{id}" name="id" />
@@ -38,6 +30,5 @@
 		</form>
 		<a href="/admin">powrót do listy</a>
 	</div>
-	<!-- <div th:replace="fragments/footer :: footer">Footer</div>  -->
 </body>
 </html>

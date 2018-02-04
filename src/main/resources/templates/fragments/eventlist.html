@@ -19,7 +19,7 @@
 						<td th:if="${editable}">
 							<a th:href="@{/showFormForUpdate(id=${event.id})}">Aktualizuj</a>
 							|
-							<a th:href="@{/delete(id=${event.id})}" onclick="if (!(confirm('Na pewno skasować?'))) return false">Skasuj</a>
+							<a th:href="@{/deleteEvent(id=${event.id})}" onclick="if (!(confirm('Na pewno skasować?'))) return false">Skasuj</a>
 						</td>
 					</tr>
 				</table>

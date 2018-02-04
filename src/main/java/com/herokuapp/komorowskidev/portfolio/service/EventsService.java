@@ -4,6 +4,7 @@ import com.herokuapp.komorowskidev.portfolio.entity.Events;
 
 /**
  * interfejs serwisu zdarzeń
+ * 
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *
  */

@@ -138,8 +138,8 @@ public class MainController {
 		return "event-form";
 	}
 	
-	@GetMapping("/delete")
-	public String delete(@RequestParam("id") long id, Model model) {
+	@GetMapping("/deleteEvent")
+	public String deleteEvent(@RequestParam("id") long id, Model model) {
 		eventsService.delete(id);
 		return "redirect:/admin"; 
 	}

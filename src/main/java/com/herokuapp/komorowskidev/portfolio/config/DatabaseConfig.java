@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * konfiguracja dostępu do bazy danych
+ * wczytanie konfiguracji dostępu do bazy danych
  * dane dostępowe pobierane ze zmiennych systemoych
  * SPRING_DATASOURCE_URL, SPRING_DATASOURCE_USERNAME, SPRING_DATASOURCE_PASSWORD
  * 
