@@ -53,7 +53,7 @@ public class MainController {
     			section0.getMetaTitle(), 
     			section0.getMetaDescription(), 
     			section0.getMetaKeywords());
-    	String fragment = "fragments/section0";
+    	String fragment = "fragments/section0 :: contents";
     	model.addAttribute("meta", meta);
     	model.addAttribute("nav", nav);
     	model.addAttribute("fragment", fragment);
@@ -67,7 +67,7 @@ public class MainController {
     			section1.getMetaTitle(), 
     			section1.getMetaDescription(), 
     			section1.getMetaKeywords());
-    	String fragment = "fragments/section1";
+    	String fragment = "fragments/section1 :: contents";
     	model.addAttribute("meta", meta);
     	model.addAttribute("nav", nav);
     	model.addAttribute("fragment", fragment);
@@ -81,7 +81,7 @@ public class MainController {
     			section2.getMetaTitle(), 
     			section2.getMetaDescription(), 
     			section2.getMetaKeywords());
-    	String fragment = "fragments/section2";
+    	String fragment = "fragments/section2 :: contents";
     	Iterable<Events> events = eventsService.getEvents();
     	model.addAttribute("events", events);
     	model.addAttribute("meta", meta);
@@ -97,7 +97,7 @@ public class MainController {
     			section3.getMetaTitle(), 
     			section3.getMetaDescription(), 
     			section3.getMetaKeywords());
-    	String fragment = "fragments/section3";
+    	String fragment = "fragments/section3 :: contents";
     	model.addAttribute("meta", meta);
     	model.addAttribute("nav", nav);
     	model.addAttribute("fragment", fragment);
