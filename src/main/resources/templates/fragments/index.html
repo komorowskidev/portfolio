@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>title</title>
+</head>
+<body>
+	<div th:fragment="contents">
+	<div class="jumbotron">
+		<div class="container">
+			<h1 th:text="${jumbotron.getTitle()}">tytuł</h1>
+			<p th:text="${jumbotron.getDescription()}">opis</p>
+		</div>
+    </div>
+    <div class="container">
+	    <div class="row">
+	        <div class="col-md-4">
+	          <h2 th:text="${nav.getPsychotherapy().getTitle()}">Tytuł sekcji</h2>
+	          <p th:text="${nav.getPsychotherapy().getDescription()}">opis</p>
+	          <p th:text="${jumbotronPsychotherapy.getDescription()}">osoba</p>
+	          <p><a class="btn btn-default" th:href="${nav.getPsychotherapy().getUrl()}" role="button">Szczegóły &raquo;</a></p>
+	        </div>
+	        <div class="col-md-4">
+	          <h2 th:text="${nav.getProgramming().getTitle()}">Tytuł sekcji</h2>
+	          <p th:text="${nav.getProgramming().getDescription()}">opis</p>
+	          <p th:text="${jumbotronProgramming.getDescription()}">osoba</p>
+	          <p><a class="btn btn-default" th:href="${nav.getProgramming().getUrl()}" role="button">Szczegóły &raquo;</a></p>
+	       </div>
+	        <div class="col-md-4">
+	          <h2 th:text="${nav.getBeekeeping().getTitle()}">Tytuł sekcji</h2>
+	          <p th:text="${nav.getBeekeeping().getDescription()}">opis</p>
+	          <p th:text="${jumbotronBeekeeping.getDescription()}">osoba</p>
+	          <p><a class="btn btn-default" th:href="${nav.getBeekeeping().getUrl()}" role="button">Szczegóły &raquo;</a></p>
+	        </div>
+	    </div>
+	</div>
+	</div>
+</body>
+</html>

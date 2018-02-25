@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title th:text="${meta.title}">Komorowscy</title>
-<meta name="description" content="template" th:content="${meta.description}" />
-<meta name="keywords" content="template" th:content="${meta.keywords}" />
+<title th:text="${header.getMetaTitle()}">Komorowscy</title>
+<meta name="description" content="template" th:content="${header.getMetaDescription()}" />
+<meta name="keywords" content="template" th:content="${header.getMetaKeywords()}" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 <!-- Optional theme -->
@@ -23,14 +23,14 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a th:href="${nav.url0}" class="navbar-brand" th:text="${nav.name0}">Home</a>
+		          <a th:href="${nav.getIndex().getUrl()}" class="navbar-brand" th:text="${nav.getIndex().getTitle()}">Home</a>
           		  
         		</div>
         		<div class="collapse navbar-collapse" id="navbar">
       				<ul class="nav navbar-nav">
-        				<li><a th:href="${nav.url1}" th:text="${nav.name1}">Tytuł<span class="sr-only">(current)</span></a></li>
-        				<li><a th:href="${nav.url2}" th:text="${nav.name2}">Tytuł</a></li>
-        				<li><a th:href="${nav.url3}" th:text="${nav.name3}">Tytuł</a></li>
+        				<li><a th:href="${nav.getPsychotherapy().getUrl()}" th:text="${nav.getPsychotherapy().getTitle()}">Tytuł<span class="sr-only">(current)</span></a></li>
+        				<li><a th:href="${nav.getProgramming().getUrl()}" th:text="${nav.getProgramming().getTitle()}">Tytuł</a></li>
+        				<li><a th:href="${nav.getBeekeeping().getUrl()}" th:text="${nav.getBeekeeping().getTitle()}">Tytuł</a></li>
         			</ul>
       			</div>
       		</div>

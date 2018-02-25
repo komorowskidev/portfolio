@@ -6,12 +6,7 @@
 </head>
 <body>
 	<div th:fragment="contents">
-		<div class="jumbotron">
-			<div class="container">
-				<h1 th:text="${section.title}">nagłówek</h1>
-				<p th:text="${nav.person3}">opis</p>
-			</div>
-	    </div>
+    	<div th:replace="fragments/jumbotron :: contents">Jumbotron</div>
 	    <div class="container">
 		    <p>Jesteśmy małżeństwem, które stara się żyć jak najbardziej ekologicznie. Nasz ogród nawozimy tylko własnym kompostownikiem i nie używamy żadnych chemicznych oprysków. 
 			Uważamy, że plony mogą być mniejsze ale muszą być zdrowe.

@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.herokuapp.komorowskidev.portfolio.bean.MetaBean;
 import com.herokuapp.komorowskidev.portfolio.bean.NavBean;
-import com.herokuapp.komorowskidev.portfolio.bean.Section0;
-import com.herokuapp.komorowskidev.portfolio.bean.Section1;
-import com.herokuapp.komorowskidev.portfolio.bean.Section2;
-import com.herokuapp.komorowskidev.portfolio.bean.Section3;
 import com.herokuapp.komorowskidev.portfolio.entity.Events;
+import com.herokuapp.komorowskidev.portfolio.service.BeekeepingService;
 import com.herokuapp.komorowskidev.portfolio.service.EventsService;
+import com.herokuapp.komorowskidev.portfolio.service.IndexService;
+import com.herokuapp.komorowskidev.portfolio.service.ProgrammingService;
+import com.herokuapp.komorowskidev.portfolio.service.PsychotherapyService;
 
 /**
  * główny kontroler aplikacji
+ * 
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *
  */
@@ -26,82 +26,58 @@ import com.herokuapp.komorowskidev.portfolio.service.EventsService;
 public class MainController {
 	
 	@Autowired
-	private Section0 section0;
-	
-	@Autowired
-	private Section1 section1;
-	
-	@Autowired
-	private Section2 section2;
-	
-	@Autowired
-	private Section3 section3;
-	
-	@Autowired
-	private NavBean nav;
-	
-	private final String SECTION1URL = "/psychoterapia";
-	private final String SECTION2URL = "/programowanie";
-	private final String SECTION3URL = "/pszczelarstwo";
-	
-	@Autowired
 	private EventsService eventsService;
+	
+	@Autowired
+	private IndexService indexService;
+	
+	@Autowired
+	private PsychotherapyService psychotherapyService;
+	
+	@Autowired
+	private ProgrammingService programmingService;
 
+	@Autowired
+	private BeekeepingService beekeepingService;
+	
 	@GetMapping("/")
     public String index(Model model) {
-    	MetaBean meta = new MetaBean(
-    			section0.getMetaTitle(), 
-    			section0.getMetaDescription(), 
-    			section0.getMetaKeywords());
-    	String fragment = "fragments/section0 :: contents";
-    	model.addAttribute("meta", meta);
-    	model.addAttribute("nav", nav);
-    	model.addAttribute("fragment", fragment);
-    	model.addAttribute("section", section0);
+    	model.addAttribute("fragment", "fragments/index :: contents");
+    	model.addAttribute("header", indexService.getHeader());
+    	model.addAttribute("nav", getNav());
+    	model.addAttribute("jumbotron", indexService.getJumbotron());
+    	model.addAttribute("jumbotronPsychotherapy", psychotherapyService.getJumbotron());
+    	model.addAttribute("jumbotronProgramming", programmingService.getJumbotron());
+    	model.addAttribute("jumbotronBeekeeping", beekeepingService.getJumbotron());
     	return "layout";
     }
 	
-	@GetMapping(SECTION1URL)
-    public String section1(Model model) {
-		MetaBean meta = new MetaBean(
-    			section1.getMetaTitle(), 
-    			section1.getMetaDescription(), 
-    			section1.getMetaKeywords());
-    	String fragment = "fragments/section1 :: contents";
-    	model.addAttribute("meta", meta);
-    	model.addAttribute("nav", nav);
-    	model.addAttribute("fragment", fragment);
-    	model.addAttribute("section", section1);
+	@GetMapping("/psychoterapia")
+    public String psychotherapy(Model model) {
+		model.addAttribute("fragment", "fragments/psychotherapy :: contents");
+		model.addAttribute("header", psychotherapyService.getHeader());
+    	model.addAttribute("nav", getNav());
+    	model.addAttribute("jumbotron", psychotherapyService.getJumbotron());
     	return "layout";
     }
 	
-	@GetMapping(SECTION2URL)
-    public String section2(Model model) {
-		MetaBean meta = new MetaBean(
-    			section2.getMetaTitle(), 
-    			section2.getMetaDescription(), 
-    			section2.getMetaKeywords());
-    	String fragment = "fragments/section2 :: contents";
-    	Iterable<Events> events = eventsService.getEvents();
+	@GetMapping("/programowanie")
+    public String programming(Model model) {
+		model.addAttribute("fragment", "fragments/programming :: contents");
+		model.addAttribute("header", programmingService.getHeader());
+		model.addAttribute("nav", getNav());
+		model.addAttribute("jumbotron", programmingService.getJumbotron());
+		Iterable<Events> events = eventsService.getEvents();
     	model.addAttribute("events", events);
-    	model.addAttribute("meta", meta);
-    	model.addAttribute("nav", nav);
-    	model.addAttribute("fragment", fragment);
-    	model.addAttribute("section", section2);
     	return "layout";
     }
 	
-	@GetMapping(SECTION3URL)
-    public String section3(Model model) {
-		MetaBean meta = new MetaBean(
-    			section3.getMetaTitle(), 
-    			section3.getMetaDescription(), 
-    			section3.getMetaKeywords());
-    	String fragment = "fragments/section3 :: contents";
-    	model.addAttribute("meta", meta);
-    	model.addAttribute("nav", nav);
-    	model.addAttribute("fragment", fragment);
-    	model.addAttribute("section", section3);
+	@GetMapping("/pszczelarstwo")
+    public String beekeeping(Model model) {
+		model.addAttribute("fragment", "fragments/beekeeping :: contents");
+		model.addAttribute("header", beekeepingService.getHeader());
+    	model.addAttribute("nav", getNav());
+    	model.addAttribute("jumbotron", beekeepingService.getJumbotron());
     	return "layout";
     }
     
@@ -148,6 +124,14 @@ public class MainController {
 	public String saveEvent(@ModelAttribute("event") Events event) {
 		eventsService.saveEvent(event);
 		return "redirect:/admin";
+	}
+	
+	private NavBean getNav() {
+		return new NavBean(
+				indexService.getNav(), 
+				psychotherapyService.getNav(),
+				programmingService.getNav(),
+				beekeepingService.getNav());
 	}
 	
 }

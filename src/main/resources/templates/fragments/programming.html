@@ -6,12 +6,7 @@
 </head>
 <body>
 	<div th:fragment="contents">
-	<div class="jumbotron">
-		<div class="container">
-			<h1 th:text="${section.title}">nagłówek</h1>
-			<p th:text="${nav.person2}">opis</p>
-		</div>
-    </div>
+	<div th:replace="fragments/jumbotron :: contents">Jumbotron</div>
      <div class="container">
 	    <p>
 		Tworzę aplikacje w języku Java używając frameworka Spring. Używam Hibernate, wykorzystuję AOP, do logowania korzystam z Logback, do testów jednostkowych używam JUnit.<br />

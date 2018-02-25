@@ -6,12 +6,7 @@
 </head>
 <body>
 	<div th:fragment="contents">
-		<div class="jumbotron">
-			<div class="container">
-				<h1 th:text="${section.title}">nagłówek</h1>
-				<p th:text="${nav.person1}">opis</p>
-			</div>
-	    </div>
+		<div th:replace="fragments/jumbotron :: contents">Jumbotron</div>
 	    <div class="container">
 		    <ul>
 				<li>doradztwo i wsparcie w sytuacjach kryzysowych</li>
