@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * klasa aspectowa, loguje wejścia na podstrony
+ * 
  * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
  *
  */
@@ -19,22 +20,22 @@ public class LoggingAspect {
 
 	@Before("execution(* index(..))")
 	public void beforeIndex() {
-		logger.debug("==> entering section 0 (index)");
+		logger.debug("==> entering index");
 	}
 	
-	@Before("execution(* section1(..))")
-	public void beforeSection0() {
-		logger.debug("==> entering section 1");
+	@Before("execution(* psychotherapy(..))")
+	public void beforePsychotherapy() {
+		logger.debug("==> entering psychotherapy");
 	}
 	
-	@Before("execution(* section2(..))")
-	public void beforeSection1() {
-		logger.debug("==> entering section 2");
+	@Before("execution(* programming(..))")
+	public void beforeProgramming() {
+		logger.debug("==> entering programming");
 	}
 	
-	@Before("execution(* section3(..))")
-	public void beforeSection2() {
-		logger.debug("==> entering section 3");
+	@Before("execution(* beekeeping(..))")
+	public void beforeBeekeeping() {
+		logger.debug("==> entering beekeeping");
 	}
 	
 	@Before("execution(* sectionAdmin(..))")

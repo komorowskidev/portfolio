@@ -1,5 +1,11 @@
 package com.herokuapp.komorowskidev.portfolio.bean;
 
+/**
+ * obiekt RESTowy
+ * 
+ * @author Krzysztof Świerkosz-Komorowski komorowskidev@gmail.com
+ *
+ */
 public class RestGreeting {
 
     private final String content;
